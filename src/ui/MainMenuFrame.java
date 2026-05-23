@@ -5,7 +5,7 @@ import java.awt.*;
 
 public class MainMenuFrame extends JFrame {
     public MainMenuFrame() {
-        setTitle("Nikmat Lezat - Menu Utama");
+        setTitle("Aplikasi Restoran v1.0");
         setSize(420, 260);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLayout(new BorderLayout(8,8));
