@@ -164,6 +164,13 @@ public class OrderFrame extends JFrame {
             sb.append("Pajak (10%): Rp ").append(format(res.tax)).append("\n");
             sb.append("Biaya Pelayanan: Rp ").append(format(res.service)).append("\n");
             sb.append("TOTAL BAYAR: Rp ").append(format(res.total)).append("\n");
+            if (res.subtotal > 50000) {
+                sb.append("!!! S E L A M A T !!!\n");
+                sb.append("Anda mendapatkan\n");
+                sb.append("penawaran Beli 1 Gratis 1\n");
+                sb.append("Pada kategori Minuman\n");
+                sb.append("Silahkan tunjukkan struk ini kepada kasir\n");
+            }
             JOptionPane.showMessageDialog(this, sb.toString(), "Rincian Pembayaran", JOptionPane.INFORMATION_MESSAGE);
         });
 
