@@ -166,10 +166,11 @@ public class OrderFrame extends JFrame {
             sb.append("TOTAL BAYAR: Rp ").append(format(res.total)).append("\n");
             if (res.subtotal > 50000) {
                 sb.append("!!! S E L A M A T !!!\n");
-                sb.append("Anda mendapatkan\n");
-                sb.append("penawaran Beli 1 Gratis 1\n");
+                sb.append("  Anda mendapatkan\n");
+                sb.append("Penawaran Beli 1 Gratis 1\n");
                 sb.append("Pada kategori Minuman\n");
-                sb.append("Silahkan tunjukkan struk ini kepada kasir\n");
+                sb.append("Tunjukkan struk ini kepada kasir\n");
+                sb.append("Untuk mengambil Promo\n");
             }
             JOptionPane.showMessageDialog(this, sb.toString(), "Rincian Pembayaran", JOptionPane.INFORMATION_MESSAGE);
         });
