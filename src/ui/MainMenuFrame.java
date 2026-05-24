@@ -32,10 +32,19 @@ public class MainMenuFrame extends JFrame {
         });
 
         btnManage.addActionListener(e -> {
-            ManageMenuFrame mm = new ManageMenuFrame(this);
-            mm.setLocationRelativeTo(this);
-            mm.setVisible(true);
-            this.setVisible(false);
+            JPasswordField pf = new JPasswordField();
+            int ok = JOptionPane.showConfirmDialog(this, pf, "Masukkan Password untuk Manajemen Menu:", JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
+            if (ok == JOptionPane.OK_OPTION) {
+                String pass = new String(pf.getPassword());
+                if ("1234".equals(pass)) {
+                    ManageMenuFrame mm = new ManageMenuFrame(this);
+                    mm.setLocationRelativeTo(this);
+                    mm.setVisible(true);
+                    this.setVisible(false);
+                } else {
+                    JOptionPane.showMessageDialog(this, "Password salah.");
+                }
+            }
         });
 
         btnExit.addActionListener(e -> System.exit(0));

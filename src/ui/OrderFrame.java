@@ -51,9 +51,9 @@ public class OrderFrame extends JFrame {
         gbc.fill = GridBagConstraints.HORIZONTAL;
 
         JLabel lblQty = new JLabel("Jumlah:");
-        JSpinner spQty = new JSpinner(new SpinnerNumberModel(1, 1, 100, 1));
+        JSpinner spQty = new JSpinner(new SpinnerNumberModel(1, 1, Integer.MAX_VALUE, 1));
         JButton btnAdd = new JButton("Tambah ke Keranjang");
-        JLabel info = new JLabel("<html><small>Max 4 item berbeda di keranjang</small></html>");
+        JLabel info = new JLabel("<html><small>Tidak ada batasan jumlah item di keranjang</small></html>");
         JButton btnRemove = new JButton("Hapus Item Terpilih");
         // tombol Kembali akan ditempatkan di paling bawah tengah (di bawah footer)
 
@@ -118,10 +118,7 @@ public class OrderFrame extends JFrame {
                 JOptionPane.showMessageDialog(this, "Pilih menu terlebih dahulu.");
                 return;
             }
-            if (cart.size() >= 4) {
-                JOptionPane.showMessageDialog(this, "Maksimal 4 item berbeda di keranjang.");
-                return;
-            }
+            // Tidak ada batasan jumlah item berbeda di keranjang (pesanan tak terbatas)
             int modelIndex = menuTable.convertRowIndexToModel(sel);
             MenuItem m = MenuData.getMenuList().get(modelIndex);
             int qty = (Integer) spQty.getValue();
