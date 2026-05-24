@@ -33,7 +33,7 @@ public class MainMenuFrame extends JFrame {
 
         btnManage.addActionListener(e -> {
             JPasswordField pf = new JPasswordField();
-            int ok = JOptionPane.showConfirmDialog(this, pf, "Masukkan Password untuk Manajemen Menu:", JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
+            int ok = JOptionPane.showConfirmDialog(this, pf, "Masukkan Password untuk Manajemen Menu (1234):", JOptionPane.OK_CANCEL_OPTION, JOptionPane.PLAIN_MESSAGE);
             if (ok == JOptionPane.OK_OPTION) {
                 String pass = new String(pf.getPassword());
                 if ("1234".equals(pass)) {
